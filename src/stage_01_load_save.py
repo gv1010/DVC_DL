@@ -16,19 +16,19 @@ logging.basicConfig(filename=os.path.join(log_dir, 'running_logs.log'), level=lo
 def copy_file(source_download_dir, local_data_dir):
     list_of_files = os.listdir(source_download_dir)
     N = len(list_of_files)
-    for file in tqdm(list_of_files, total=N, desc = f"copying file{source_download_dir} to {local_data_dir}", color="red"):
+    for file in tqdm(list_of_files, total=N, desc = f"copying file{source_download_dir} to {local_data_dir}", colour="red"):
         src = os.path.join(source_download_dir, file)
         dest = os.path.join(local_data_dir, file)
         shutil.copy(src, dest)
 
 def get_data(config_path):
     config = read_yaml(config_path)
-    source_download_dirs = config["source_data_paths"]
+    source_download_dirs = config["source_download_dirs"]
     local_data_dirs = config["local_data_dirs"]
 
-    for source_download_dir, local_data_dir in tqdm(zip(source_download_dirs, local_data_dirs), total=2, desc= "list folders", color="green"):
-        create_directory(source_download_dir)
-        create_directory(local_data_dir)
+    for source_download_dir, local_data_dir in tqdm(zip(source_download_dirs, local_data_dirs), total=2, desc= "list folders", colour="green"):
+        create_directory([source_download_dir])
+        create_directory([local_data_dir])
         copy_file(source_download_dir, local_data_dir)
 
 

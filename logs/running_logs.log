@@ -1,0 +1,24 @@
+[2022-01-09 12:37:52,656: INFO: stage_01_load_save]: >>>>> stage one started
+[2022-01-09 12:37:52,658: ERROR: stage_01_load_save]: 'source_data_paths'
+Traceback (most recent call last):
+  File "src/stage_01_load_save.py", line 44, in <module>
+    get_data(config_path=parsed_args.config)
+  File "src/stage_01_load_save.py", line 26, in get_data
+    source_download_dirs = config["source_data_paths"]
+KeyError: 'source_data_paths'
+[2022-01-09 12:38:38,059: INFO: stage_01_load_save]: >>>>> stage one started
+[2022-01-09 12:38:38,066: ERROR: stage_01_load_save]: "Unknown argument(s): {'color': 'green'}"
+Traceback (most recent call last):
+  File "src/stage_01_load_save.py", line 44, in <module>
+    get_data(config_path=parsed_args.config)
+  File "src/stage_01_load_save.py", line 29, in get_data
+    for source_download_dir, local_data_dir in tqdm(zip(source_download_dirs, local_data_dirs), total=2, desc= "list folders", color="green"):
+  File "/home/gv/Neuron/mlops/lib/python3.8/site-packages/tqdm/std.py", line 1012, in __init__
+    raise (
+tqdm.std.TqdmKeyError: "Unknown argument(s): {'color': 'green'}"
+[2022-01-09 12:40:43,269: INFO: stage_01_load_save]: >>>>> stage one started
+[2022-01-09 12:40:43,327: INFO: stage_01_load_save]: stage one completed! all the data are saved in local >>>>>
+
+[2022-01-09 12:42:01,201: INFO: stage_01_load_save]: >>>>> stage one started
+[2022-01-09 12:42:01,303: INFO: stage_01_load_save]: stage one completed! all the data are saved in local >>>>>
+
